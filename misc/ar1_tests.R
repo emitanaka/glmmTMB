@@ -18,7 +18,7 @@ y <- MASS::mvrnorm(n = 1,
 data <- expand.grid(day = factor(1:ndays), group = LETTERS[1:ngrps]) |> 
   transform(y = y,
             nday = as.numeric(day),
-            obs = factor(seq(nrow(data))))
+            obs = factor(seq(ndays * ngrps)))
 
 
 if (!dir.exists("older_lib")) {
